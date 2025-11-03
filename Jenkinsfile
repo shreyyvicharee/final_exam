@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo 'Pushing image to Docker Hub...'
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                    bat 'docker login -u %DOCKER_USER% -p %DOCKER_PASS%'
+                    bat 'docker login -u shreyyvicharee -p iw@535am
                     bat 'docker push shreyyvicharee/myflaskapp:latest'
                 }
             }
@@ -37,10 +37,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ Pipeline completed successfully!'
+            echo ' Pipeline completed successfully!'
         }
         failure {
-            echo '❌ Pipeline failed. Check logs for details.'
+            echo ' Pipeline failed. Check logs for details.'
         }
     }
 }
